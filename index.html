@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול כלי רכב</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+
+    <div class="container">
+
+        <h1 class="main-title">🚗 ניהול כלי רכב</h1>
+        <p class="subtitle">הוסיפו כלי רכב לרשימה ונהלו אותם בקלות</p>
+
+        <div class="form-card">
+            <h2 class="card-title">➕ הוספת רכב חדש</h2>
+
+            <div class="form-grid">
+
+                <div class="field-group">
+                    <label for="vehicleType">סוג רכב</label>
+                    <select id="vehicleType">
+                        <option value="">-- בחרו סוג --</option>
+                        <option value="רכב פרטי">🚗 רכב פרטי</option>
+                        <option value="משאית">🚛 משאית</option>
+                        <option value="אופנוע">🏍️ אופנוע</option>
+                        <option value="סירה">🚤 סירה</option>
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label for="manufacturer">יצרן</label>
+                    <input type="text" id="manufacturer" placeholder="לדוגמה: Toyota">
+                </div>
+
+                <div class="field-group">
+                    <label for="vehicleColor">צבע</label>
+                    <input type="color" id="vehicleColor" value="#00e5ff">
+                </div>
+
+                <div class="field-group">
+                    <label for="price">מחיר (₪)</label>
+                    <input type="number" id="price" placeholder="לדוגמה: 150000" min="0">
+                </div>
+
+            </div>
+
+            <div id="errorMsg" class="error-msg"></div>
+
+            <div class="btn-row">
+                <button class="btn btn-add" onclick="addVehicle()">🚀 הוסף רכב</button>
+                <button class="btn btn-clear" onclick="clearForm()">🧹 נקה טופס</button>
+                <button class="btn btn-delete-all" onclick="deleteAll()">🗑️ מחק הכל</button>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <h2 class="card-title">📋 רשימת כלי רכב</h2>
+            <div class="stats-row">
+                <span id="totalCount" class="stat-badge">סה"כ: 0</span>
+                <span id="totalPrice" class="stat-badge">שווי כולל: ₪0</span>
+            </div>
+            <div class="table-wrapper">
+                <table id="vehicleTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>סוג</th>
+                            <th>יצרן</th>
+                            <th>צבע</th>
+                            <th>מחיר</th>
+                            <th>פעולה</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <p id="emptyMsg" class="empty-msg">אין כלי רכב עדיין — הוסיפו את הראשון! 🚗</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
